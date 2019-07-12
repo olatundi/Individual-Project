@@ -1,0 +1,84 @@
+/* #boards{
+    overflow-y: scroll;
+    min-width: 70%;
+    height: 90vh;
+    
+} */
+html{
+    overflow-x: hidden;
+}
+/* .col-sm-9{
+    overflow-y: scroll; 
+    min-width: 70%;
+    height: 90vh;
+    
+} */
+
+main{
+    padding-top: 65px; 
+    
+}
+body{
+    background: url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") fixed 0 0;
+    background-size: fill;
+}
+h1{
+    color: rgb(8, 8, 7);
+    text-shadow: 4px 3px 0 rgb(218, 209, 209);
+    padding-left: 30px;
+}
+#newBoard{
+    padding-left: 30px;
+}
+#Account{
+    top: 0;
+    right: 0;
+    position: fixed;
+}
+#board-body{
+    /* width: 100%; */
+    background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+    background-size: 100%;
+}
+.card{
+    opacity: 0.8;
+}
+.navbar {
+    color: #FFFFFF;
+    background-color:#996D6D;
+}
+.boardTitle{
+    color: #FFFFFF;
+    
+}
+#nav-title{
+    color: #FFFFFF;
+}
+.jumbotron{
+    background: #996D6D;
+
+}
+
+#layout-left{
+overflow-y: auto;
+/* min-width: 30%; */
+max-width: 30%;
+padding-left: 15px;
+overflow-x: hidden;
+width: 30%;
+height: 80vh;
+margin: 0;
+float: left;
+}
+
+#layout-right{
+    overflow-y: auto;
+    /* min-width: 30%; */
+    min-width: 30%;
+    padding-left: 15px;
+    overflow-x: hidden;
+    /* width: 30%; */
+    height: 80vh;
+    margin: 0;
+    float: left;
+    }

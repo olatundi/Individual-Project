@@ -1,0 +1,58 @@
+
+html{
+    display: block;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.44em;
+}
+h1 {
+    height: 100%;
+    color: #333;
+    font-size: 38px;
+    line-height: 48px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+section{
+    display: block;
+    word-wrap: break-word;
+    overflow: hidden;
+    padding: 0 1em;
+}
+
+
+
+.login-password-container-email{
+    margin-top: 1.2em;
+    display: inline-block;
+}
+
+
+form{
+    margin-top: 0em;
+    display: block;
+}
+
+
+input {
+    margin: 5px;
+    display: block;
+    margin: auto;
+
+}
+
+.layout-twothirds-center{
+    text-align: center;
+}
+.labelAlign{
+    text-align: center;
+    /* width: 50%; */
+}
+.card{
+    width: 40%;
+    margin: auto;
+
+}
