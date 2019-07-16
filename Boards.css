@@ -30,6 +30,10 @@ h1{
 #newBoard{
     padding-left: 30px;
 }
+#newTask
+{
+    padding-left: 265px;
+}
 #Account{
     top: 0;
     right: 0;
