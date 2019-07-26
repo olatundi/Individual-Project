@@ -1,8 +1,8 @@
-$("#register-form").submit(function(e) {
+$("#edit-form").submit(function(e) {
     e.preventDefault();
 });
 
-function handleReg(fo) {
+function handleEdit(fo) {
     const uname = document.getElementById("user").value;
     const pass = document.getElementById("password").value;
     const cPass = document.getElementById("ConPassword").value;
@@ -16,8 +16,10 @@ function handleReg(fo) {
         window.alert("Please Enter a Matching Password!");
         return null;
     }
+    const userID = sessionStorage.getItem("userId");
 
-    const createAcc = "http://localhost:8080/ToDo/api/account/createAccount";
+    const editAcc = "http://localhost:8080/ToDo/api/account/update/" + userID;
+
     const regJson = {
         username: uname,
         password: cPass,
@@ -26,17 +28,18 @@ function handleReg(fo) {
     };
     console.log(regJson);
 
-    
-    makeRequest("POST", createAcc, JSON.stringify(regJson)).then(value => {
+    makeRequest("POST", editAcc, JSON.stringify(regJson)).then(value => {
         console.log("Success", value);
-        window.alert("Please login to your account");
-        toLogin();
+        window.alert("Account Updated");
+        toBoard();
     });
-
     return true;
-
 }
 
 function toLogin() {
     window.location = "Login.html"
+}
+
+function toBoard() {
+    window.location = "Boards.html"
 }

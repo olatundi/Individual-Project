@@ -18,6 +18,8 @@
 
     <header>
         <nav class="navbar fixed-top navbar-expand-md navbar-light white double-nav scrolling-navbar top-nav-collapse">
+            <div id="accDetails"></div>
+
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
                 <!-- Account -->
                 <li id="navbar-static-tools" class="nav-item dropdown">
@@ -26,11 +28,11 @@
                         <i class="fas fa-wrench"></i><span id="nav-title"
                             class="d-none d-lg-inline-block ml-1">Account</span></a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbar-tools">
-                        <a class="dropdown-item waves-effect waves-light" href="Boards.html">Your Boards</a>
                         <a class="dropdown-item waves-effect waves-light">Edit Account</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item waves-effect waves-light" href="#" data-toggle="modal"
-                            data-target="#accountModal">Sign Out<span class="badge badge-danger rounded">New</span></a>
+                            data-target="#accountModal">Sign Out<span class="badge badge-danger rounded">To
+                                Do</span></a>
                     </div>
                 </li>
             </ul>
@@ -55,8 +57,8 @@
                         <p>Are you sure you want to sign out?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Edit Account</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sign Out</button>
+                        <button type="button" class="btn btn-primary" onClick="return logOut()">Sign Out</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -86,13 +88,10 @@
         </div>
 
         <div id="layout-left">
-            <!-- <div class="create-account quiet">
-            <a href="Rr.html" id="signup">Account
-        </div> -->
 
-            <!-- <div class="row">
-                <div class="col">
-                    <div class="card">
+            <div class="row" id=>
+                <div class="col" id="boardSection">
+                    <!-- <div class="card"> 
                         <div class="card-body">
                             <div class="boardTitle">
                                 <h2>Boards 1
@@ -105,55 +104,55 @@
                                 <button type="button" class="btn btn-light">Delete</button>
                             </div>
                         </div>
-                    </div>
-
+                    </div> -->
                 </div>
-            </div> -->
+            </div>
         </div>
 
         <div class="layout-right">
-            <div class="card">
-                <div class="card-body">
+            <div class="card" id="taskCard">
+                <div class="card-body" id="taskBody">
                     <div class="row">
                         <div class="col">
-                            Done
+                            <h3>Done</h3>
                         </div>
                         <div class="col-8">
-                            Task
+                            <h3>Task</h3>
                         </div>
                         <div class="col">
-                            Priority
+                            <h3>Priority</h3>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col">
-                            <!-- unchecked -->
-                            <!-- <div class="custom-control custom-checkbox"> -->
-                            <!-- <input type="checkbox" class="custom-control-input" id="unchecked" checked> -->
-                            <!-- <label class="custom-control-label" for="unchecked"></label> -->
-                            <!-- </div> -->
+
                             <div class="form-check">
                                 <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
                                     value="option1" aria-label="...">
                             </div>
                         </div>
                         <div class="col-8">
-                            <p2>Build Website</p2>
+                            <div class="alert alert-info">
+                                <p2>Build Website</p2>
+                            </div>
                         </div>
                         <div class="col">
-                            <!-- Basic dropdown -->
-                            <button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Priority</button>
-
-                            <div class="dropdown-menu">
+                            Basic dropdown -->
+                    <!-- <button id= "priorityButton"class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" >Priority</button>
+                            <div class="dropdown-menu" id="priorityOption" >
                                 <a class="dropdown-item" href="#">Low</a>
                                 <a class="dropdown-item" href="#">Medium</a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">High</a>
-                            </div>
-                            <!-- Basic dropdown -->
-                        </div>
-                    </div>
+                            </div> -->
+                    <!-- <select id="myPriority">
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                             Basic dropdown 
+                        </div> 
+                    </div> -->
 
                 </div>
             </div>
@@ -177,12 +176,13 @@
                     <div class="md-form mb-5">
                         <i class="dashboard prefix grey-text"></i>
                         <label data-error="wrong" data-success="right" for="formBoard" class>Your Board Name </label>
-                        <input type="text" id="formBoard" class="form-control validate">
+                        <input type="text" id="formBoard" class="form-control validate"
+                            placeholder="Enter your board name">
                     </div>
 
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-success" onclick="return createBoard()">Create Board</button>
+                    <button class="btn btn-success" onclick="return handleBoard()">Create Board</button>
                 </div>
             </div>
         </div>
@@ -201,20 +201,25 @@
                 <div class="modal-body mx-3">
                     <div class="md-form mb-5">
                         <i class="dashboard prefix grey-text"></i>
-                        <label data-error="wrong" data-success="right" for="formTask" class>Your Task</label>
-                        <input type="text" id="formTask" class="form-control validate">
+                        <label data-error="wrong" data-success="right" for="formTask" class>Description</label>
+                        <input type="text" id="taskDesc" class="form-control validate">
+                        <i class="dashboard prefix grey-text"></i>
+                        <label data-error="wrong" data-success="right" for="formTask" class>Priority</label>
+                        <select id="priorityChoice">
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
                     </div>
 
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-success" onclick="return createTask()">Create Task</button>
+                    <button class="btn btn-success" onclick="return getBoardID()">Create Task</button>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <script src="Boards.js" async defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -224,6 +229,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="requestJs.js" async defer></script>
+    <script src="Boards.js" async defer></script>
 </body>
 
 </html>

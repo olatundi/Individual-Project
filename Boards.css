@@ -32,6 +32,8 @@ h1{
 }
 #newTask
 {
+    visibility:hidden;
+    
     padding-left: 265px;
 }
 #Account{
@@ -86,3 +88,23 @@ float: left;
     margin: 0;
     float: left;
     }
+
+.col-8{
+    text-align: center;
+    margin: 0 auto;
+}
+#taskCard{
+    visibility: hidden;
+}
+
+
+#blankCheckbox{
+    margin: 0 auto;
+
+}
+
+#accDetails{
+
+    text-align: center;
+    margin: 0 auto;
+}

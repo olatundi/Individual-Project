@@ -14,21 +14,19 @@
 </head>
 
 <body>
-
     <div class="layout-twothirds-center">
-        <h1>Login to Your Account</h1>
+        <h1>Create Your Account</h1>
         <div class="create-account quiet">
             <a href="Login.html" id="signup">or sign in to your account
             </a>
         </div>
         <div class="card">
             <div class="card-body">
-                <form id="login-form" class="inputs" novalidate="novalidate" method="POST">
+                <form id="register-form"  method='POST'>
 
                     <div class="labelAlign">
-                        <label for="user">Email </label>
-                        <input type="email" name="user" id="user" autocorrect="off" spellcheck="false" autocapitalize="off"
-                            autofocus="autofocus" placeholder="Enter Email">
+                        <label for="user">Username </label>
+                        <input type="text" name="user" id="user" placeholder="Enter Username">
                     </div>
 
                     <div class="labelAlign">
@@ -36,16 +34,21 @@
                         <input type="password" name="password" id="password" placeholder="Enter Password">
                     </div>
 
+                    <div class="labelAlign">
+                        <label for="password">Confirm Password</label>
+                        <input type="password" name="password" id="ConPassword" placeholder="Re-Enter Password">
+                    </div>
+
+
                     <label for="firstName">First Name</label>
-                    <input id = "firstName" placeholder="Enter FirstName" type="text" >
+                    <input id="firstName" placeholder="Enter FirstName" type="text">
 
-                    <label for="lastName">LastName</label>
-                    <input id = "lastName" placeholder="Enter LastName" type="text" >
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" placeholder="Enter LastName" type="text">
 
-                    <input id="login" type="submit" class="btn btn-success" value="Create New Account">
+                    <input id="register" onclick="return handleReg()" type="submit" class="btn btn-success" value="Create New Account">
 
                 </form>
-                
             </div>
         </div>
 
@@ -61,7 +64,8 @@
             </div> -->
     </div>
 
-    <script src="Register.js"></script>
+    <script src="requestJs.js" async defer ></script>
+    <script src="Register.js" async defer ></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
