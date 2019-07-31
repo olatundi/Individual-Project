@@ -8,6 +8,15 @@ function handleReg(fo) {
     const cPass = document.getElementById("ConPassword").value;
     const fname = document.getElementById("firstName").value;
     const lname = document.getElementById("lastName").value;
+    var host = "http://35.246.117.146:8081/";
+
+    if (uname != "" ) {
+        let usename = uname;
+    }
+    else {
+        window.alert("Please Enter a Valid Username!");
+        return null;
+    }
 
     if (pass == cPass) {
         let finalP = cPass;
@@ -17,24 +26,19 @@ function handleReg(fo) {
         return null;
     }
 
-    const createAcc = "http://localhost:8080/ToDo/api/account/createAccount";
+    const createAcc = host+"ToDo/api/account/createAccount";
     const regJson = {
         username: uname,
         password: cPass,
         firstName: fname,
         lastName: lname
     };
-    console.log(regJson);
-
     
     makeRequest("POST", createAcc, JSON.stringify(regJson)).then(value => {
-        console.log("Success", value);
-        window.alert("Please login to your account");
+        window.alert("Now login to your account");
         toLogin();
     });
-
     return true;
-
 }
 
 function toLogin() {

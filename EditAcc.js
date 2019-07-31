@@ -16,20 +16,18 @@ function handleEdit(fo) {
         window.alert("Please Enter a Matching Password!");
         return null;
     }
+
     const userID = sessionStorage.getItem("userId");
-
-    const editAcc = "http://localhost:8080/ToDo/api/account/update/" + userID;
-
+    var host = "http://35.246.117.146:8081/";
+    const editAcc = host+"ToDo/api/account/update/" + userID;
     const regJson = {
         username: uname,
         password: cPass,
         firstName: fname,
         lastName: lname
     };
-    console.log(regJson);
 
     makeRequest("POST", editAcc, JSON.stringify(regJson)).then(value => {
-        console.log("Success", value);
         window.alert("Account Updated");
         toBoard();
     });

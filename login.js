@@ -5,7 +5,7 @@ $("#login-form").submit(function(e) {
 function handleReg(fo) {
     const uname = document.getElementById("user").value;
     const pass = document.getElementById("password").value;
-    
+    var host = "http://35.246.117.146:8081/"
 
     // if (pass == cPass) {
     //     let finalP = cPass;
@@ -15,14 +15,11 @@ function handleReg(fo) {
     //     return null;
     // }
 
-    const checkAcc = "http://localhost:8080/ToDo/api/account/login";
+    const checkAcc = host+"ToDo/api/account/login";
     const regJson = {
         username: uname,
         password: pass
-        
     };
-    console.log(regJson);
-
     // const xhr = new XMLHttpRequest();
 
     // xhr.open("POST", createAcc);
@@ -31,16 +28,14 @@ function handleReg(fo) {
     // xhr.send(JSON.stringify(regJson));
     makeRequest("POST", checkAcc, JSON.stringify(regJson)).then(value => {
         value = JSON.parse(value);
-        console.log("Success:", value);
-        console.log(value.length);  
+        
         if (value.length > 0 ){
-            
             sessionStorage.setItem('userId', value[0].id);
             // window.alert()
             toBoard();
         } 
         else{
-            window.alert("Please enter valid details");
+            window.alert("Please Enter Valid Details or Create a New Account");
         }
         
     });
