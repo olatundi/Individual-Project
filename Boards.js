@@ -107,7 +107,7 @@ function populateBoard(board) {
     for (b of board) {
         let bID = b.id;
         const wrapperCard = document.createElement("div");
-        wrapperCard.className = "card";
+        wrapperCard.className = "card cardEffect";
         wrapperCard.id = b.id;
         wrapperCard.setAttribute("onclick", "var temp = setBoardId(this.id); getTask(); return temp;");
         const wrapperCBody = document.createElement("div");
