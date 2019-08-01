@@ -37,14 +37,13 @@ function handleBoard() {
 function handleRename() {
     const rboardName = document.getElementById("renameBoard").value;
     if (rboardName != "") {
-        createBoard(rboardName)
+        renameBoard(rboardName)
     }
     else {
         window.alert("Please enter a valid board name");
         return false;
     }
 }
-handleRename
 
 function deleteAccount() {
 
