@@ -42,5 +42,5 @@ function handleReg(fo) {
 }
 
 function toLogin() {
-    window.location = "Login.html"
+    window.location = "login.html"
 }

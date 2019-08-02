@@ -83,9 +83,6 @@ function getBoard() {
     });
 }
 
-
-
-
 function setBoardId(boaId) {
     sessionStorage.setItem("boardId", boaId);
 }
@@ -341,12 +338,12 @@ function populateTask(task) {
 function logOut() {
     sessionStorage.removeItem('userId');
     sessionStorage.removeItem('boardId');
-    window.location = "Login.html";
+    window.location = "login.html";
 }
 
 
 function toLogin() {
-    window.location = "Login.html";
+    window.location = "login.html";
 }
 
 function toRegister() {
